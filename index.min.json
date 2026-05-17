@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Aniyomi: AllManga",
+    "pkg": "eu.kanade.tachiyomi.animeextension.en.allmanga",
+    "apk": "aniyomi-en.allmanga-v14.1-debug.apk",
+    "lang": "en",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "AllManga",
+        "lang": "en",
+        "id": "8224423032040037650",
+        "baseUrl": "https://allmanga.to",
+        "versionId": 1
+      }
+    ]
+  },
+  {
+    "name": "Aniyomi: AniKoto",
+    "pkg": "eu.kanade.tachiyomi.animeextension.en.anikoto",
+    "apk": "aniyomi-en.anikoto-v14.1-debug.apk",
+    "lang": "en",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "AniKoto",
+        "lang": "en",
+        "id": "4697393375201558791",
+        "baseUrl": "https://anikototv.to",
+        "versionId": 1
+      }
+    ]
+  },
+  {
+    "name": "Aniyomi: AnimeTsu",
+    "pkg": "eu.kanade.tachiyomi.animeextension.en.animetsu",
+    "apk": "aniyomi-en.animetsu-v14.1-debug.apk",
+    "lang": "en",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "AnimeTsu",
+        "lang": "en",
+        "id": "4004740464218813696",
+        "baseUrl": "https://animetsu.live",
+        "versionId": 1
+      }
+    ]
+  },
+  {
+    "name": "Aniyomi: AniZone",
+    "pkg": "eu.kanade.tachiyomi.animeextension.en.anizone",
+    "apk": "aniyomi-en.anizone-v14.1-debug.apk",
+    "lang": "en",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "AniZone",
+        "lang": "en",
+        "id": "3407493795000303981",
+        "baseUrl": "https://anizone.to",
+        "versionId": 1
+      }
+    ]
+  },
+  {
+    "name": "Aniyomi: Miruro",
+    "pkg": "eu.kanade.tachiyomi.animeextension.en.miruro",
+    "apk": "aniyomi-en.miruro-v14.1-debug.apk",
+    "lang": "en",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "Miruro",
+        "lang": "en",
+        "id": "3667926178713451431",
+        "baseUrl": "https://www.miruro.to",
+        "versionId": 1
+      }
+    ]
+  },
+  {
+    "name": "Aniyomi: ReAnime",
+    "pkg": "eu.kanade.tachiyomi.animeextension.en.reanime",
+    "apk": "aniyomi-en.reanime-v14.1-debug.apk",
+    "lang": "en",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "ReAnime",
+        "lang": "en",
+        "id": "7102451443370643927",
+        "baseUrl": "https://reanime.to",
+        "versionId": 1
+      }
+    ]
+  }
+]
