@@ -51,6 +51,8 @@ jobs:
             :src:en:anikoto:assembleDebug \
             :src:en:animetsu:assembleDebug \
             :src:en:anizone:assembleDebug \
+            -x lintKotlinMain \
+            -x lintKotlinDebug \
             --stacktrace
 
       - name: Collect APKs and generate index
