@@ -10,13 +10,16 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: write
+
 jobs:
   build:
     name: Build Extensions
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout main branch
+      - name: Checkout master branch
         uses: actions/checkout@v4
 
       - name: Set up JDK 17
@@ -27,6 +30,10 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+
+      - name: Install Android SDK packages
+        run: |
+          sdkmanager "platforms;android-32" "build-tools;32.0.0"
 
       - name: Grant execute permission to gradlew
         run: chmod +x gradlew
@@ -39,7 +46,8 @@ jobs:
             :src:en:allmanga:assembleDebug \
             :src:en:anikoto:assembleDebug \
             :src:en:animetsu:assembleDebug \
-            :src:en:anizone:assembleDebug
+            :src:en:anizone:assembleDebug \
+            --stacktrace
 
       - name: Collect APKs and generate index
         run: |
