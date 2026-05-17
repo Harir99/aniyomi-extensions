@@ -1,9 +1,5 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-
 ext {
     extName = 'ReAnime'
-    pkgNameSuffix = 'en.reanime'
     extClass = '.ReAnime'
     extVersionCode = 1
     isNsfw = false

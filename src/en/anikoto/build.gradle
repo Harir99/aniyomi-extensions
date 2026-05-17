@@ -1,9 +1,5 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-
 ext {
     extName = 'AniKoto'
-    pkgNameSuffix = 'en.anikoto'
     extClass = '.AniKoto'
     extVersionCode = 1
     isNsfw = false

@@ -3,7 +3,7 @@ name: Build Aniyomi Extensions
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 concurrency:
@@ -44,10 +44,11 @@ jobs:
       - name: Collect APKs and generate index
         run: |
           mkdir -p repo/apk
-          # Copy all built APKs into repo/apk/
           find . -path "*/build/outputs/apk/debug/*.apk" -exec cp {} repo/apk/ \;
-          # Copy index
-          cp index.min.json repo/index.min.json
+          INSPECTOR_LINK="$(curl -s "https://api.github.com/repos/aniyomiorg/aniyomi-extensions-inspector/releases/latest" | jq -r '.assets[0].browser_download_url')"
+          curl -L "$INSPECTOR_LINK" -o ./Inspector.jar
+          java -jar ./Inspector.jar "repo/apk" "output.json" "tmp"
+          python ./.github/scripts/create-repo.py
           echo "APKs collected:"
           ls repo/apk/
 

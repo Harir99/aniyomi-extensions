@@ -1,9 +1,5 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-
 ext {
     extName = 'AllManga'
-    pkgNameSuffix = 'en.allmanga'
     extClass = '.AllManga'
     extVersionCode = 1
     isNsfw = false
