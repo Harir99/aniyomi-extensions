@@ -20,6 +20,7 @@ jobs:
 
     env:
       CI_CHUNK_SIZE: 65
+      CI_CHUNK_NUM: 0
 
     steps:
       - name: Checkout master branch
