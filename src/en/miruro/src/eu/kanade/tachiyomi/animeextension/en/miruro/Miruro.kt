@@ -38,7 +38,7 @@ class Miruro : AnimeHttpSource() {
     override val lang = "en"
     override val supportsLatest = true
 
-    private val json: Json by injectLazy()
+    private val json: Json = Json { ignoreUnknownKeys = true }
 
     private val apiBase = "$baseUrl/api/v2/hianime"
 

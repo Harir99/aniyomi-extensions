@@ -37,7 +37,7 @@ class AnimeTsu : AnimeHttpSource() {
     override val lang = "en"
     override val supportsLatest = true
 
-    private val json: Json by injectLazy()
+    private val json: Json = Json { ignoreUnknownKeys = true }
 
     override val client = network.cloudflareClient
 

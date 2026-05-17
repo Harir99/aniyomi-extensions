@@ -37,7 +37,7 @@ class AniKoto : AnimeHttpSource() {
     override val lang = "en"
     override val supportsLatest = true
 
-    private val json: Json by injectLazy()
+    private val json: Json = Json { ignoreUnknownKeys = true }
 
     // Spoof a real browser to work around Cloudflare-lite bot checks
     override val client = network.cloudflareClient

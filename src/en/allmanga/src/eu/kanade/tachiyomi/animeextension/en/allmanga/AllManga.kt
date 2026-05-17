@@ -38,7 +38,7 @@ class AllManga : AnimeHttpSource() {
     override val lang = "en"
     override val supportsLatest = true
 
-    private val json: Json by injectLazy()
+private val json: Json = Json { ignoreUnknownKeys = true }
     private val apiUrl = "$baseUrl/api"
 
     private val jsonMediaType = "application/json; charset=utf-8".toMediaType()
