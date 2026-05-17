@@ -18,7 +18,7 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Response
-import uy.kohesive.injekt.injectLazy
+import kotlinx.serialization.json.JsonConfiguration
 
 // ---------------------------------------------------------------------------
 // AllManga (Anime)  –  https://allmanga.to/anime

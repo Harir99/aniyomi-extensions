@@ -13,7 +13,7 @@ import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import okhttp3.Request
 import okhttp3.Response
-import uy.kohesive.injekt.injectLazy
+import kotlinx.serialization.json.JsonConfiguration
 
 // ---------------------------------------------------------------------------
 // AniKoto  –  https://anikototv.to
