@@ -18,6 +18,9 @@ jobs:
     name: Build Extensions
     runs-on: ubuntu-latest
 
+    env:
+      CI_CHUNK_SIZE: 65
+
     steps:
       - name: Checkout master branch
         uses: actions/checkout@v4
