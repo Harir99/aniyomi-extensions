@@ -63,6 +63,7 @@ jobs:
           curl -L "$INSPECTOR_LINK" -o ./Inspector.jar
           java -jar ./Inspector.jar "repo/apk" "output.json" "tmp"
           python ./.github/scripts/create-repo.py
+          cp repo/index.json repo/index.min.json
           echo "APKs collected:"
           ls repo/apk/
 
