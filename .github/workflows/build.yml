@@ -1,0 +1,63 @@
+name: Build Aniyomi Extensions
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build Extensions
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Grant execute permission to gradlew
+        run: chmod +x gradlew
+
+      - name: Build all extensions
+        run: |
+          ./gradlew \
+            :src:en:reanime:assembleDebug \
+            :src:en:miruro:assembleDebug \
+            :src:en:allmanga:assembleDebug \
+            :src:en:anikoto:assembleDebug \
+            :src:en:animetsu:assembleDebug \
+            :src:en:anizone:assembleDebug
+
+      - name: Collect APKs and generate index
+        run: |
+          mkdir -p repo/apk
+          # Copy all built APKs into repo/apk/
+          find . -path "*/build/outputs/apk/debug/*.apk" -exec cp {} repo/apk/ \;
+          # Copy index
+          cp index.min.json repo/index.min.json
+          echo "APKs collected:"
+          ls repo/apk/
+
+      - name: Deploy to repo branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./repo
+          publish_branch: repo
+          force_orphan: true
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_message: "Update repo branch with latest builds"
